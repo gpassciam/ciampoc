@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+<head>
+    <!--<link href="assets/css/style-order-return.css" rel="stylesheet">-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/Gigya.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="https://cdns.gigya.com/js/gigya.js?apikey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
+
+
+</head>
+<body onload="load();">
+
+
+
+    <script type="text/javascript">
+
+
+        function services(flag) {
+
+            if (flag == "Ordering") {
+
+
+                //alert("your Ordering site will be open in new tab");
+                window.open("Ordering.html", "_blank");
+            }
+
+            if (flag == "Returns") {
+
+
+                window.open("Returns.html", "_blank");
+            }
+        }
+
+        var session_UID = CheckLogin();
+        if (session_UID != null || typeof session_UID != "undefined") {
+            var mytable = "<table width=\"100%\"><tbody><tr><td><div id=\"header\"></div></td></tr><tr><td><section id=\"ord-ret-hero\">" +
+
+                "<div class=\"container\">" +
+                "<div class=\"col-lg-7 order-2 order-lg-1 d-flex align-items-center\">" +
+                "<div data-aos=\"zoom-out\" class=\"aos-init aos-animate\">" +
+                "<h1>Empower your organization with CIAM POC </h1></div></div></div></section ></td></tr><tr><td>";
+
+
+            mytable +=
+                "<section id=\"services\" class=\"services\"><div class=\"container\"><div class=\"section-title\"><h2 id=\"dname\"></h2></div><div align=\"center\">"
+
+            //mytable +=
+            //    "<section id=\"services\" class=\"services\"><div class=\"container\"><div class=\"section-title\"><h2 id=\"dname\"></h2><p style=\"text-colour:white\">You are in B2B Portal.<br/>Below are the list of applications which you have access.</p></div><div class=\"row\">"
+
+            mytable += "<table><tr>";
+
+            //const roleids = sessionStorage.getItem("roles");
+
+            //roleids.split(",").forEach(function (roleid) {
+                //role = localStorage.getItem(roleid);
+                //if (role == "Delegated Admin") {
+
+                    //opendelegateadmin(sessionStorage.getItem('OrgID'));
+                //}
+                //else {
+            
+            mytable += "<td onclick =\"services()\"><div><div class=\"icon-box\"><div class=\"icon\"><i class=\"fas fa-heartbeat\"></i></div><h4><a href=\"\" onclick=\"services()\">Healthcare Services</a></h4><p>Improve wholesale medical equipment ordering and returns efficiency with Roche web-based application</p></div></div></td>"
+            
+            mytable += "<td onclick=\"services()\"><div><div class=\"icon-box\"><div class=\"icon\"><i class=\"fas fa-heartbeat\"></i></div><h4><a href=\"\" onclick=\"services()\">Medical Prescription</a></h4><p>Improve wholesale medical equipment ordering and returns efficiency with Roche web-based application</p></div></div>"
+            
+            mytable += "</td></tr><tr>"
+            
+            
+            mytable += "<td onclick=\"services()\"><div><div class=\"icon-box\"><div class=\"icon\"><i class=\"fas fa-heartbeat\"></i></div><h4><a href=\"\" onclick=\"services()\">Pharmacy</a></h4><p>Improve wholesale medical equipment ordering and returns efficiency with Roche web-based application</p></div></div></td>"
+            
+            mytable += "<td onclick=\"services()\"><div><div class=\"icon-box\"><div class=\"icon\"><i class=\"fas fa-heartbeat\"></i></div><h4><a href=\"\" onclick=\"services()\">Online Prescription</a></h4><p>Improve wholesale medical equipment ordering and returns efficiency with Roche web-based application</p></div></div>"
+            mytable += "</td>"
+            //}
+            //})
+
+            console.log(mytable);
+
+            mytable += "</tr></table></div></div></section ></td></tr><tr><td>"
+            mytable +=
+                "<hr style=\"height: 35px;visibility: hidden\" /><div id=\"footer\"></div>" +
+                "</td></tr ></tbody ></table >";
+
+            document.write(mytable);
+
+
+            document.getElementById("dname").innerText = "Welcome to B2C Portal";
+            //document.getElementById("dname").innerText = "Welcome : " + sessionStorage.getItem("SName") + "    " + "| Account for : " + sessionStorage.getItem("SOrgName");
+            //if (localStorage.getItem("DACheck") == "Yes") {
+            //    document.getElementById("DAT").style.display = "block";
+            //}
+            //else {
+            //    document.getElementById("DAT").style.display = "none";
+            //}
+
+
+            //var session_UID = CheckLogin();
+        }
+
+
+
+    </script>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/IndexedDB.js"></script>
+    
+    
+
+
+    
+</body>
+</html>

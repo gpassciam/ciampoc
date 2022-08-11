@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>CIAM Sample - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <script>
+        $(function () {
+            $('a').each(function () {
+                if ($(this).prop('href') == window.location.href) {
+                    $(this).addClass('nav-link active'); $(this).parents('li').addClass('nav-link active');
+                }
+            });
+        });
+
+        var session_UID = sessionStorage.getItem("SUID");
+        var session_Name = sessionStorage.getItem("SName");
+        //alert(session_Name);
+        var session_Provider = sessionStorage.getItem("SProvider");
+        var session_OrgName = sessionStorage.getItem("SOrgName");
+        var flag = sessionStorage.getItem("flag");
+        //alert(flag);
+        //session_Email = 'here';
+        //alert(session_Email);
+
+        if (session_UID == null || typeof session_UID === "undefined") {
+
+            //document.getElementById("LN").style.display = "block";
+            //document.getElementById("RS").style.display = "block";
+            document.getElementById("HM").style.display = "block";
+            document.getElementById("HMLb2b").style.display = "none";
+            document.getElementById("HMLb2c").style.display = "none";
+            document.getElementById("MP").style.display = "none";
+            document.getElementById("CP").style.display = "none";
+            document.getElementById("LO").style.display = "none";
+            //document.getElementById("info").style.display = "none";
+
+
+        }
+        else {
+
+            if (flag == 'b2c') {
+                //document.getElementById("info").innerText = "Hello," + " " + session_Name;
+                document.getElementById("HMLb2c").style.display = "block";
+                document.getElementById("HMLb2b").style.display = "none";
+            }
+            if (flag == 'b2b') {
+                //document.getElementById("info").innerText = "Hello," + " " + session_Name + "\n" + "Account for : " + session_OrgName;
+                //document.getElementById("info").style.font  = "18px"
+                document.getElementById("HMLb2b").style.display = "block";
+                document.getElementById("HMLb2c").style.display = "none";
+            }
+            
+            document.getElementById("MP").style.display = "block";
+            //alert(session_Provider);
+            if (session_Provider == null || typeof session_Provider === "undefined") {
+                alert('ok');
+                document.getElementById("CP").style.display = "block";
+            }
+            else {
+                //alert('no');
+                document.getElementById("CP").style.display = "none";
+            }
+            document.getElementById("HM").style.display = "none";
+
+            //document.getElementById("RS").style.display = "none";
+            //document.getElementById("info").style.display = "block";
+            document.getElementById("LO").style.display = "block";
+            //window.location.href = 'Login.html';
+        }
+
+        
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">Roche</a></h1>
+            <!--<a href="index.html" class="logo me-auto"><img src="assets/img/Logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+
+                    <li><a id="HM" class="nav-link" href="index.html">Home</a></li>
+                    <li><a id="HMLb2b" class="nav-link" href="Landingb2b.html">Home</a></li>
+                    <li><a id="HMLb2c" class="nav-link" href="Landingb2c.html">Home</a></li>
+                    <li><a id="MP" class="nav-link" href="MyProfile.html">My Profile</a></li>
+                    <li><a id="CP" class="nav-link" href="ChangePassword.html">Change Password</a></li>
+                    <li><a id="LO" class="nav-link" href="Logout.html">Logout</a></li>
+
+
+                </ul>
+                <!--<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </p>
+                <a id="info" href="MyProfile.html"><strong></strong></a>-->
+            </nav>
+        </div>
+
+    </header>
+    <script src="assets/js/Gigya.js"></script>
+    <script id="Gigya"></script>
+    
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</body>
+
+</html>
