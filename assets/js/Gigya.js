@@ -252,7 +252,7 @@ async function Update(response) {
         "extraProfileFields": "languages,address,phones, education, honors, publications, patents, certifications, professionalHeadline, bio, industry, specialties, work, skills, religion, politicalView, interestedIn, relationshipStatus, hometown, favorites, followersCount, followingCount, username, locale, verified, timezone, likes, samlData"
     }
     
-    gigya.accounts.getAccountInfo({callback: getAccountInfoResponse });
+    gigya.accounts.getAccountInfo(params,{callback: getAccountInfoResponse });
 
 }
 
@@ -265,6 +265,7 @@ function delay(n) {
 
 
 function getAccountInfoResponse(response) {
+    
     if (response.errorCode == 0) {
         var firstName = response.profile.firstName;
         var lastName = response.profile.lastName;
@@ -275,14 +276,14 @@ function getAccountInfoResponse(response) {
         //var Data = response;
         //alert(firstName);
         var Data = JSON.parse(JSON.stringify(response));
-        
+        alert(response);
         UpdateData(DBName, Table, Data, UID);
         //var elem = document.getElementById('ni');
-        if (typeof elem !== 'undefined' && elem !== null) {
+        //if (typeof elem !== 'undefined' && elem !== null) {
             document.getElementById('ni').onclick = function () {
                 Getdata('MyProfile.html', UID);
             };
-        }
+        //}
         
         //cancel();
         
