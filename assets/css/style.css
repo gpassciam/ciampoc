@@ -2018,3 +2018,8 @@ width: 100%;
         font-size: 14px;
         color: #55585a;
     }
+
+p-section {
+    padding: 30px 0;
+    overflow: hidden;
+}
