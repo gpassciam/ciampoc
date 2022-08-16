@@ -276,7 +276,7 @@ function getAccountInfoResponse(response) {
         //var Data = response;
         //alert(firstName);
         var Data = JSON.parse(JSON.stringify(response));
-        alert(response);
+        //alert(response);
         UpdateData(DBName, Table, Data, UID);
         //var elem = document.getElementById('ni');
         //if (typeof elem !== 'undefined' && elem !== null) {
