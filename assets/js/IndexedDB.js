@@ -317,15 +317,21 @@ function getRecorsChild(event,Table,UID) {
         var result = event.target.result;
         //alert(result.groups.organizations[0].orgName);
         document.getElementById('UID').value = result.UID;
-        document.getElementById('email').value = result.profile.email;
-        document.getElementById('firstName').value = result.profile.firstName;
-        document.getElementById('lastName').value = result.profile.lastName;
+        document.getElementById('email').innerHTML = result.profile.email;
+        document.getElementById('firstName').innerHTML = result.profile.firstName;
+        document.getElementById('lastName').innerHTML = result.profile.lastName;
+        document.getElementById('phone').innerHTML = result.data.PhoneNumber;
+        document.getElementById('address').innerHTML = result.profile.address;
+        document.getElementById('city').innerHTML = result.profile.city;
+        document.getElementById('state').innerHTML = result.profile.state;
+        document.getElementById('zipcode').innerHTML = result.profile.zip;
+        document.getElementById('country').innerHTML = result.profile.country;
         var role;
         var rolenames='';
         if (sessionStorage.getItem("flag") == 'b2b') {
-            document.getElementById('Organization').value = result.groups.organizations[0].orgName;
-            document.getElementById('Department').value = result.groups.organizations[0].department;
-            document.getElementById('Job').value = result.groups.organizations[0].job;
+            document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
+            document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
+            document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
             var roles = result.groups.organizations[0].roles;
 
             roles.forEach(function (roleid) {
@@ -333,7 +339,7 @@ function getRecorsChild(event,Table,UID) {
                 role = role + "\n";
                 rolenames = rolenames + role;
             });
-            document.getElementById('Roles').value = rolenames;
+            document.getElementById('Roles').innerHTML = rolenames;
             
 
             
