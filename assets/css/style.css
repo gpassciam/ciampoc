@@ -1860,3 +1860,161 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+
+.p-doctors {
+    background: #fff;
+}
+
+.p-doctors .icon-boxes .big-icon-box {
+ text-align: Left;
+        /* border-radius: 10px; */
+        /* background: #fff; */
+background: rgb(238, 240, 242);
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 0px 30px;
+width: 100%;
+  }
+
+    .p-doctors .icon-boxes .icon-box {
+        text-align: Left;
+        /* border-radius: 10px; */
+        /* background: #fff; */
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        padding: 40px 30px;
+        width: 100%;
+    }
+
+    .p-doctors .member {
+        position: relative;
+        box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+        padding: 30px;
+        padding-bottom: 20px;
+        border-radius: 0px;
+        background-color: white;
+    }
+
+        .p-doctors .member .pic {
+            overflow: hidden;
+            width: 180px;
+            border-radius: 50%;
+        }
+
+            .p-doctors .member .pic img {
+                transition: ease-in-out 0.3s;
+            }
+
+        .p-doctors .member:hover img {
+            transform: scale(1.1);
+        }
+
+        .p-doctors .member .member-info {
+            /* padding: 20px; */
+            width: 50%;
+            float: left;
+            /* padding-right: 50px; */
+        }
+
+        .p-doctors .member .member-info2 {
+            padding-left: 20px;
+            width: 50%;
+            float: left;
+            /* padding-right: 50px; */
+        }
+
+        .p-doctors .member .member-info3 {
+            padding-left: 200px;
+            width: 50%;
+            float: left;
+            align-content: center;
+            /* padding-right: 50px; */
+        }
+
+
+        .p-doctors .member h4 {
+            font-weight: 550;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #2c4964;
+        }
+
+        .p-doctors .member span {
+            display: block;
+            font-size: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        /* .doctors .member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #b2c8dd;
+  bottom: 0;
+  left: 0;
+} */
+
+        .p-doctors .member p {
+            margin: 10px 0 0 0;
+            font-size: 14px;
+        }
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.p-contact .info {
+    width: 100%;
+    /* background: #fff; */
+}
+
+    .p-contact .info i {
+        font-size: 20px;
+        color: #1977cc;
+        float: left;
+        width: 44px;
+        height: 44px;
+        background: #d6e9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .p-contact .info h3 {
+        float: center;
+        text-align: center;
+        padding: 0 0 0 10px;
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        color: #2c4964;
+        background-color: #b7d3ed;
+    }
+
+    .p-contact .info h4 {
+        padding: 20px 0 0 30px;
+        font-size: 14px;
+        font-weight: 550;
+        margin-bottom: 0px;
+        color: #2c4964;
+    }
+
+    .p-contact .info h5 {
+        padding: 20px 0 0 30px;
+        font-size: 14px;
+        font-weight: 550;
+        margin-bottom: 0px;
+        color: #000000;
+    }
+
+    .p-contact .info p {
+        padding: 0 0 0 30px;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #55585a;
+    }
