@@ -101,7 +101,7 @@ function onb2bLogin(response) {
             //}
             else {
                 //console.log(session_UID);
-                //window.location = 'Landingb2b.html';
+                window.location = 'Landingb2b.html';
             }
         });
     }
