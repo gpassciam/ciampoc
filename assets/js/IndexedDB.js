@@ -71,7 +71,7 @@ function insert(event,Table,Data) {
            query.onsuccess = function (event) {
             console.log("On_Insert_Success");
         };
-
+    ''
         // handle the error case
         query.onerror = function (event) {
             
@@ -315,20 +315,38 @@ function getRecorsChild(event,Table,UID) {
 
         console.log("On_getRecordsChild_onsuccess");
         var result = event.target.result;
+        console.log(result);
+        if (sessionStorage.getItem("flag") == 'b2c') {
+            //document.getElementById('UID').value = result.UID;
+            document.getElementById('email').innerHTML = result.profile.email;
+            document.getElementById('firstName').innerHTML = result.profile.firstName;
+            document.getElementById('lastName').innerHTML = result.profile.lastName;
+            //alert("Address");
+            //alert(result.profile.address);
+            document.getElementById('address').innerHTML = result.profile.address;
+            document.getElementById('city').innerHTML = result.profile.city;
+            document.getElementById('state').innerHTML = result.profile.state;
+            document.getElementById('zip').innerHTML = result.profile.zip;
+
+            document.getElementById('country').innerHTML = result.profile.country;
+            document.getElementById('phone').innerHTML = result.data.PhoneNumber;
+        }
         //alert(result.groups.organizations[0].orgName);
-        document.getElementById('UID').value = result.UID;
-        document.getElementById('email').innerHTML = result.profile.email;
-        document.getElementById('firstName').innerHTML = result.profile.firstName;
-        document.getElementById('lastName').innerHTML = result.profile.lastName;
-        document.getElementById('phone').innerHTML = result.data.PhoneNumber;
-        document.getElementById('address').innerHTML = result.profile.address;
-        document.getElementById('city').innerHTML = result.profile.city;
-        document.getElementById('state').innerHTML = result.profile.state;
-        document.getElementById('zipcode').innerHTML = result.profile.zip;
-        document.getElementById('country').innerHTML = result.profile.country;
+        
         var role;
         var rolenames='';
         if (sessionStorage.getItem("flag") == 'b2b') {
+            //document.getElementById('phone').innerHTML = result.identities.phones.number;
+            document.getElementById('email').innerHTML = result.profile.email;
+            document.getElementById('firstName').innerHTML = result.profile.firstName;
+            document.getElementById('lastName').innerHTML = result.profile.lastName;
+            document.getElementById('caddress').innerHTML = result.profile.address;
+            document.getElementById('ccity').innerHTML = result.profile.city;
+            document.getElementById('cstate').innerHTML = result.profile.state;
+            document.getElementById('czip').innerHTML = result.profile.zip;
+
+            document.getElementById('ccountry').innerHTML = result.profile.country;
+            document.getElementById('phone').innerHTML = result.phoneNumber;
             document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
             document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
             document.getElementById('Job').innerHTML = result.groups.organizations[0].job;

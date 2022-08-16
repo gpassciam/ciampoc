@@ -77,6 +77,7 @@ function onb2bLogin(response) {
         let DBName = "Users";
         let Table = "Users_Info";
         let Data = JSON.parse(JSON.stringify(response));
+        console.log("Data :" + Data);
         ProcessDB(DBName, Table, Data, key);
        
         getUID(DBName, Table, UID).then(function (SUID) {
@@ -100,7 +101,7 @@ function onb2bLogin(response) {
             //}
             else {
                 //console.log(session_UID);
-                window.location = 'Landingb2b.html';
+                //window.location = 'Landingb2b.html';
             }
         });
     }
@@ -276,7 +277,7 @@ function getAccountInfoResponse(response) {
         var Data = JSON.parse(JSON.stringify(response));
         
         UpdateData(DBName, Table, Data, UID);
-        var elem = document.getElementById('ni');
+        //var elem = document.getElementById('ni');
         if (typeof elem !== 'undefined' && elem !== null) {
             document.getElementById('ni').onclick = function () {
                 Getdata('MyProfile.html', UID);
