@@ -354,7 +354,13 @@ function getRecorsChild(event,Table,UID) {
 
             roles.forEach(function (roleid) {
                 role = localStorage.getItem(roleid);
-                role = role + ",";
+                if (roles.count > 1) {
+                    role = role + ";";
+                }
+                else {
+                    role = role;
+                }
+                
                 rolenames = rolenames + role;
             });
             document.getElementById('Roles').innerHTML = rolenames;
