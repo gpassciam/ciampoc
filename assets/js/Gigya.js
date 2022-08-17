@@ -63,7 +63,8 @@ function onb2bLogin(response) {
     sessionStorage.setItem("CUID", UID);
     var params = {
         "UID": UID,
-        "include": "groups,profile"
+        "include": "groups,profile",
+        "extraProfileFields": "address"
 
     }
 
