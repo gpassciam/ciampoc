@@ -787,7 +787,7 @@ section {
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 30px 0;
-    font-family: "Raleway", sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .why-us .icon-boxes .icon-box p {
@@ -1074,14 +1074,14 @@ section {
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
-  background: #1977cc;
-  border-color: #1977cc;
-}
+    .services .icon-box:hover {
+        /*background: #1977cc;*/
+        border-color: #1977cc;
+    }
 
-.services .icon-box:hover .icon {
-  background: #fff;
-}
+    .services .icon-box:hover .icon {
+       background: #fff;
+    }
 
 .services .icon-box:hover .icon i {
   color: #1977cc;
@@ -1091,10 +1091,10 @@ section {
   background: #3291e6;
 }
 
-.services .icon-box:hover h4 a,
-.services .icon-box:hover p {
-  color: #fff;
-}
+        .services .icon-box:hover h4 a,
+        .services .icon-box:hover p {
+            /*color: #fff;*/
+        }
 
 /*--------------------------------------------------------------
 # Appointments
