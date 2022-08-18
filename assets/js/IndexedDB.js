@@ -316,53 +316,136 @@ function getRecorsChild(event,Table,UID) {
         console.log("On_getRecordsChild_onsuccess");
         var result = event.target.result;
         console.log(result);
-        if (sessionStorage.getItem("flag") == 'b2c') {
+        
             //document.getElementById('UID').value = result.UID;
-            document.getElementById('email').innerHTML = result.profile.email;
-            document.getElementById('firstName').innerHTML = result.profile.firstName;
-            document.getElementById('lastName').innerHTML = result.profile.lastName;
-            //alert("Address");
-            //alert(result.profile.address);
-            document.getElementById('address').innerHTML = result.profile.address;
-            document.getElementById('city').innerHTML = result.profile.city;
-            document.getElementById('state').innerHTML = result.profile.state;
-            document.getElementById('zip').innerHTML = result.profile.zip;
+        document.getElementById('photo').src = result.profile.photoURL;
+        if (typeof result.profile.email == "undefined") {
 
-            document.getElementById('country').innerHTML = result.profile.country;
-            document.getElementById('phone').innerHTML = result.data.PhoneNumber;
+            document.getElementById('email').innerHTML = "-";
         }
+        else {
+
+            document.getElementById('email').innerHTML = result.profile.email;
+        }
+
+        if (typeof result.profile.firstName == "undefined") {
+
+            document.getElementById('firstName').innerHTML = "-";
+        }
+        else {
+            document.getElementById('firstName').innerHTML = result.profile.firstName;
+        }
+        if (typeof result.profile.lastName == "undefined") {
+            document.getElementById('lastName').innerHTML = "-";
+        }
+        else {
+            document.getElementById('lastName').innerHTML = result.profile.lastName;
+        }
+            
+        if (typeof result.profile.address == "undefined") {
+            document.getElementById('address').innerHTML = "-";
+        }
+        else {
+            document.getElementById('address').innerHTML = result.profile.address;
+        }
+        if (typeof result.profile.city == "undefined") {
+            document.getElementById('city').innerHTML = "-";
+        }
+        else {
+            document.getElementById('city').innerHTML = result.profile.city;
+        }
+        if (typeof result.profile.state == "undefined") {
+            document.getElementById('state').innerHTML = "-";
+        }
+        else {
+            document.getElementById('state').innerHTML = result.profile.state;
+        }
+
+        if (typeof result.profile.zip == "undefined") {
+            document.getElementById('zip').innerHTML = "-";
+        }
+        else {
+            document.getElementById('zip').innerHTML = result.profile.zip;
+        }
+        if (typeof result.profile.country == "undefined") {
+            document.getElementById('country').innerHTML = "-";
+        }
+        else {
+            document.getElementById('country').innerHTML = result.profile.country;
+        }
+            
+
+        if (sessionStorage.getItem("flag") == 'b2c') {
+            if (result.data.PhoneNumber == "undefined") {
+
+                document.getElementById('phone').innerHTML = "-";
+            }
+            else {
+
+                document.getElementById('phone').innerHTML = result.data.PhoneNumber;
+            }
+            
+        }
+        
         //alert(result.groups.organizations[0].orgName);
         
         var role;
         var rolenames='';
         if (sessionStorage.getItem("flag") == 'b2b') {
             //document.getElementById('phone').innerHTML = result.identities.phones.number;
-            document.getElementById('email').innerHTML = result.profile.email;
-            document.getElementById('firstName').innerHTML = result.profile.firstName;
-            document.getElementById('lastName').innerHTML = result.profile.lastName;
-            document.getElementById('caddress').innerHTML = result.profile.address;
-            document.getElementById('ccity').innerHTML = result.profile.city;
-            document.getElementById('cstate').innerHTML = result.profile.state;
-            document.getElementById('czip').innerHTML = result.profile.zip;
+            //document.getElementById('email').innerHTML = result.profile.email;
+            //document.getElementById('firstName').innerHTML = result.profile.firstName;
+            //document.getElementById('lastName').innerHTML = result.profile.lastName;
+            //document.getElementById('address').innerHTML = result.profile.address;
+            //document.getElementById('city').innerHTML = result.profile.city;
+            //document.getElementById('state').innerHTML = result.profile.state;
+            //document.getElementById('zip').innerHTML = result.profile.zip;
 
-            document.getElementById('ccountry').innerHTML = result.profile.country;
-            document.getElementById('phone').innerHTML = result.phoneNumber;
-            document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
-            document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
-            document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
+            //document.getElementById('country').innerHTML = result.profile.country;
+            if (typeof result.phoneNumber == "undefined") {
+                document.getElementById('phone').innerHTML = "-";
+            }
+            else {
+
+                document.getElementById('phone').innerHTML = result.phoneNumber;
+            }
+
+            if (typeof result.groups.organizations[0].orgName == "undefined") {
+                document.getElementById('Organization').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
+            }
+
+            if (typeof result.groups.organizations[0].department == "undefined") {
+                document.getElementById('Department').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
+            }
+            if (typeof result.groups.organizations[0].job == "undefined") {
+                document.getElementById('Job').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
+            }
+            
             var roles = result.groups.organizations[0].roles;
-
+            var i = roles.length;
+            //alert(i);
             roles.forEach(function (roleid) {
-                role = localStorage.getItem(roleid);
-                if (roles.count > 1) {
-                    role = role + ";";
-                }
-                else {
-                    role = role;
-                }
                 
+                role = localStorage.getItem(roleid);
+                //if (i > 1) {
+                //    role = role + ";";
+                //}
+                //else {
+                //    role = role;
+                //}
+                role = role + "<br\>";
                 rolenames = rolenames + role;
             });
+            
             document.getElementById('Roles').innerHTML = rolenames;
             
 
