@@ -373,27 +373,7 @@ function getRecorsChild(event,Table,UID) {
         else {
             document.getElementById('country').innerHTML = result.profile.country;
         }
-
-        if (typeof result.groups.organizations[0].orgName == "undefined") {
-            document.getElementById('Organization').innerHTML = "-";
-        }
-        else {
-            document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
-        }
-
-        if (typeof result.groups.organizations[0].department == "undefined") {
-            document.getElementById('Department').innerHTML = "-";
-        }
-        else {
-            document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
-        }
-        if (typeof result.groups.organizations[0].job == "undefined") {
-            document.getElementById('Job').innerHTML = "-";
-        }
-        else {
-            document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
-        }
-
+            
 
         if (sessionStorage.getItem("flag") == 'b2c') {
             if (typeof result.data.PhoneNumber == "undefined") {
@@ -404,7 +384,11 @@ function getRecorsChild(event,Table,UID) {
 
                 document.getElementById('phone').innerHTML = result.data.PhoneNumber;
             }
-            
+
+            document.getElementById('Organization').innerHTML = "-";
+            document.getElementById('Department').innerHTML = "-";
+            document.getElementById('Job').innerHTML = "-";
+            document.getElementById('Roles').innerHTML = "-";
         }
         
         //alert(result.groups.organizations[0].orgName);
@@ -430,6 +414,25 @@ function getRecorsChild(event,Table,UID) {
                 document.getElementById('phone').innerHTML = result.phoneNumber;
             }
 
+            if (typeof result.groups.organizations[0].orgName == "undefined") {
+                document.getElementById('Organization').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
+            }
+
+            if (typeof result.groups.organizations[0].department == "undefined") {
+                document.getElementById('Department').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
+            }
+            if (typeof result.groups.organizations[0].job == "undefined") {
+                document.getElementById('Job').innerHTML = "-";
+            }
+            else {
+                document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
+            }
             
             var roles = result.groups.organizations[0].roles;
             var i = roles.length;
