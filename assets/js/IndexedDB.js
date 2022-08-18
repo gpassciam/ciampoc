@@ -376,7 +376,7 @@ function getRecorsChild(event,Table,UID) {
             
 
         if (sessionStorage.getItem("flag") == 'b2c') {
-            if (result.data.PhoneNumber == "undefined") {
+            if (typeof result.data.PhoneNumber == "undefined") {
 
                 document.getElementById('phone').innerHTML = "-";
             }
