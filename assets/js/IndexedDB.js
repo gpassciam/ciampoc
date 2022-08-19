@@ -321,7 +321,7 @@ function getRecorsChild(event,Table,UID) {
         document.getElementById('photo').src = result.profile.photoURL;
         if (typeof result.profile.email == "undefined") {
 
-            document.getElementById('email').innerHTML = "-";
+            document.getElementById('email').innerHTML = " ";
         }
         else {
 
@@ -330,45 +330,45 @@ function getRecorsChild(event,Table,UID) {
 
         if (typeof result.profile.firstName == "undefined") {
 
-            document.getElementById('firstName').innerHTML = "-";
+            document.getElementById('firstName').innerHTML = " ";
         }
         else {
             document.getElementById('firstName').innerHTML = result.profile.firstName;
         }
         if (typeof result.profile.lastName == "undefined") {
-            document.getElementById('lastName').innerHTML = "-";
+            document.getElementById('lastName').innerHTML = " ";
         }
         else {
             document.getElementById('lastName').innerHTML = result.profile.lastName;
         }
             
         if (typeof result.profile.address == "undefined") {
-            document.getElementById('address').innerHTML = "-";
+            document.getElementById('address').innerHTML = " ";
         }
         else {
             document.getElementById('address').innerHTML = result.profile.address;
         }
         if (typeof result.profile.city == "undefined") {
-            document.getElementById('city').innerHTML = "-";
+            document.getElementById('city').innerHTML = " ";
         }
         else {
             document.getElementById('city').innerHTML = result.profile.city;
         }
         if (typeof result.profile.state == "undefined") {
-            document.getElementById('state').innerHTML = "-";
+            document.getElementById('state').innerHTML = " ";
         }
         else {
             document.getElementById('state').innerHTML = result.profile.state;
         }
 
         if (typeof result.profile.zip == "undefined") {
-            document.getElementById('zip').innerHTML = "-";
+            document.getElementById('zip').innerHTML = " ";
         }
         else {
             document.getElementById('zip').innerHTML = result.profile.zip;
         }
         if (typeof result.profile.country == "undefined") {
-            document.getElementById('country').innerHTML = "-";
+            document.getElementById('country').innerHTML = " ";
         }
         else {
             document.getElementById('country').innerHTML = result.profile.country;
@@ -378,17 +378,17 @@ function getRecorsChild(event,Table,UID) {
         if (sessionStorage.getItem("flag") == 'b2c') {
             if (typeof result.data.PhoneNumber == "undefined") {
 
-                document.getElementById('phone').innerHTML = "-";
+                document.getElementById('phone').innerHTML = " ";
             }
             else {
 
                 document.getElementById('phone').innerHTML = result.data.PhoneNumber;
             }
 
-            document.getElementById('Organization').innerHTML = "-";
-            document.getElementById('Department').innerHTML = "-";
-            document.getElementById('Job').innerHTML = "-";
-            document.getElementById('Roles').innerHTML = "-";
+            document.getElementById('Organization').innerHTML = " ";
+            document.getElementById('Department').innerHTML = " ";
+            document.getElementById('Job').innerHTML = " ";
+            document.getElementById('Roles').innerHTML = " ";
         }
         
         //alert(result.groups.organizations[0].orgName);
@@ -407,7 +407,7 @@ function getRecorsChild(event,Table,UID) {
 
             //document.getElementById('country').innerHTML = result.profile.country;
             if (typeof result.phoneNumber == "undefined") {
-                document.getElementById('phone').innerHTML = "-";
+                document.getElementById('phone').innerHTML = " ";
             }
             else {
 
@@ -415,20 +415,20 @@ function getRecorsChild(event,Table,UID) {
             }
 
             if (typeof result.groups.organizations[0].orgName == "undefined") {
-                document.getElementById('Organization').innerHTML = "-";
+                document.getElementById('Organization').innerHTML = " ";
             }
             else {
                 document.getElementById('Organization').innerHTML = result.groups.organizations[0].orgName;
             }
 
             if (typeof result.groups.organizations[0].department == "undefined") {
-                document.getElementById('Department').innerHTML = "-";
+                document.getElementById('Department').innerHTML = " ";
             }
             else {
                 document.getElementById('Department').innerHTML = result.groups.organizations[0].department;
             }
             if (typeof result.groups.organizations[0].job == "undefined") {
-                document.getElementById('Job').innerHTML = "-";
+                document.getElementById('Job').innerHTML = " ";
             }
             else {
                 document.getElementById('Job').innerHTML = result.groups.organizations[0].job;
